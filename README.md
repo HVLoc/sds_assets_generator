@@ -1,12 +1,17 @@
 # assets_generator
 
-The flutter tool to generate assets‘s configs(yaml) and consts automatically for single project and multiple modules.
+The flutter tool to generate assets‘s configs(yaml) and consts automatically for single project and multiple modules at Gapo.
 
-[![pub package](https://img.shields.io/pub/v/assets_generator.svg)](https://pub.dartlang.org/packages/assets_generator) [![GitHub stars](https://img.shields.io/github/stars/fluttercandies/assets_generator)](https://github.com/fluttercandies/assets_generator/stargazers) [![GitHub forks](https://img.shields.io/github/forks/fluttercandies/assets_generator)](https://github.com/fluttercandies/assets_generator/network) [![GitHub license](https://img.shields.io/github/license/fluttercandies/assets_generator)](https://github.com/fluttercandies/assets_generator/blob/master/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/fluttercandies/assets_generator)](https://github.com/fluttercandies/assets_generator/issues) <a target="_blank" href="https://jq.qq.com/?_wv=1027&k=5bcc0gy"><img border="0" src="https://pub.idqqimg.com/wpa/images/group.png" alt="flutter-candies" title="flutter-candies"></a>
+Customized and apply for Gapo, not for everyone.
+
+Forked from "https://github.com/fluttercandies/assets_generator"
 
 ![](assets_generator.gif)
 
-Languages: English | [中文简体](README-ZH.md)
+Command for generate at Gapo: 
+```dart
+agen -f lib -t f -s -r uwu
+```
 
 - [assets_generator](#assets_generator)
   - [Usage](#usage)

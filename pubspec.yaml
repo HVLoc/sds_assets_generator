@@ -1,10 +1,10 @@
-name: assets_generator
+name: gp_assets_generator
 description: The flutter tool to generate assets‘s configs(yaml) and consts automatically for single project and multiple modules.
-version: 3.0.4
-homepage: https://github.com/fluttercandies/assets_generator
+version: 1.0.0
+homepage: https://github.com/toannmdev/gp_assets_generator.git
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: '>=2.15.0 <3.0.0'
 
 dependencies:
   args: ^2.2.0
@@ -21,8 +21,8 @@ dev_dependencies:
   pedantic: ^1.11.1
 
 executables:
-  agen: assets_generator
+  agen: gp_assets
 
 
 # dart pub global activate --source path ./
-# dart pub global activate assets_generator
+# dart pub global activate gp_assets_generator
