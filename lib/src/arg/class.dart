@@ -14,7 +14,11 @@ class Class extends Argument<String> {
   String get name => 'class';
 
   String? go(String rule) {
-    String? input = value?.replaceAll(' ', '').replaceAll('(', '').replaceAll(')', '');
+    String? input = value
+        ?.replaceAll(' ', '')
+        .replaceAll('(', '')
+        .replaceAll(')', '')
+        .replaceAll('=', '');
     //upperCamelCase
     if (rule == 'ucc') {
       if (input!.length > 1) {

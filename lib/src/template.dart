@@ -135,7 +135,8 @@ class Template {
         .replaceAll('@', '_AT_')
         .replaceAll(' ', '')
         .replaceAll('(', '')
-        .replaceAll(')', '');
+        .replaceAll(')', '')
+        .replaceAll('=', '-');
     return rule!.go(path);
   }
 }
