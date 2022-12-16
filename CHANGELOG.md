@@ -1,3 +1,5 @@
+## 1.0.8
+* Final version: done removing special character, updated lastest file rule for Gapo
 ## 1.0.7
 * Customized for Gapo: remove special character from file name
 ## 1.0.6
