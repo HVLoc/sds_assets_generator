@@ -1,5 +1,6 @@
+## 1.0.3
+* Customized for Gapo: remove special character from file name
 ## 1.0.2
-
 * Customized for Gapo: remove special character from file name
 ## 1.0.1
 
