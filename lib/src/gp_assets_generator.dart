@@ -8,7 +8,6 @@ import 'package:gp_assets_generator/src/format.dart';
 import 'package:gp_assets_generator/src/watcher.dart';
 import 'package:io/ansi.dart';
 import 'package:path/path.dart';
-import 'package:yaml/yaml.dart';
 
 import 'template.dart';
 import 'yaml.dart';
@@ -72,14 +71,6 @@ class Generator {
 
     assets.sort((String a, String b) => a.compareTo(b));
 
-    for (String e in assets) {
-      e = e.replaceAll('lib/', 'packages/gp_assets/');
-    }
-
-    for (String e in miss.keys) {
-      e = e.replaceAll('lib/', 'packages/gp_assets/');
-    }
-
     await generateConstsFile(assets, miss);
 
     Yaml(yamlFile, assets, miss.keys.toList(), formatType).write();
@@ -108,7 +99,8 @@ class Generator {
         if (basename(item.path) != '.DS_Store') {
           assets.add(item.path
               .replaceAll('${packageGraph!.path}$separator', '')
-              .replaceAll(separator, '/'));
+              .replaceAll(separator, '/')
+              .replaceAll('lib/', 'packages/gp_assets/'));
         }
       }
     }
@@ -183,7 +175,7 @@ class Generator {
       print(green.wrap(asset));
       final String r = asset.replaceAllMapped(regExp, (Match match) {
         return '';
-      });
+      }).replaceAll('lib/', 'packages/gp_assets/');
       //macth
       if (r != asset) {
         if (!assets.contains(r)) {
