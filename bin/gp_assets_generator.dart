@@ -3,7 +3,7 @@
 import 'dart:io';
 
 import 'package:build_runner_core/build_runner_core.dart';
-import 'package:gp_assets_generator/assets_generator.dart';
+import 'package:gp_assets_generator/gp_assets_generator.dart';
 import 'package:gp_assets_generator/src/arg/package.dart';
 import 'package:io/ansi.dart';
 import 'package:path/path.dart';

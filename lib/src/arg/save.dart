@@ -9,7 +9,7 @@ class Save extends Argument<bool> {
 
   @override
   String get help =>
-      'Whether save the arguments into the local\nIt will execute the local arguments if run "agen" without any arguments';
+      'Whether save the arguments into the local\nIt will execute the local arguments if run "gp_agen" without any arguments';
 
   @override
   String get name => 'save';

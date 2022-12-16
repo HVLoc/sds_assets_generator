@@ -10,7 +10,7 @@ Forked from "https://github.com/fluttercandies/assets_generator"
 
 Command for generate at Gapo: 
 ```dart
-agen -f lib -t f -s -r uwu
+gp_agen -f lib -t f -s -r uwu
 ```
 
 - [assets_generator](#assets_generator)
@@ -46,11 +46,11 @@ you need to add pub bin path into your system path.
 
 #### Help
 
-`agen -h`
+`gp_agen -h`
 
 #### Demo
 
-`agen -t d -s -r lwu`
+`gp_agen -t d -s -r lwu`
 
 #### All Commands
 
@@ -67,7 +67,7 @@ you need to add pub bin path into your system path.
                       "f" means file      "- assets/images/xxx.jpg"
                       (defaults to "d")
 -s, --[no-]save       Whether save the arguments into the local
-                      It will execute the local arguments if run "agen" without any arguments
+                      It will execute the local arguments if run "gp_agen" without any arguments
 -o, --out             The path of const Class
                       (defaults to "lib")
 -r, --rule            The rule for the names of assets' consts

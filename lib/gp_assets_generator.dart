@@ -1,4 +1,4 @@
-library assets_generator;
+library gp_assets_generator;
 
 export 'src/arg/arg.dart';
 export 'src/arg/arg_parser.dart';
@@ -14,4 +14,4 @@ export 'src/arg/rule.dart';
 export 'src/arg/save.dart';
 export 'src/arg/type.dart';
 export 'src/arg/watch.dart';
-export 'src/assets_generator.dart';
+export 'src/gp_assets_generator.dart';
