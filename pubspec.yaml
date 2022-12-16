@@ -1,6 +1,6 @@
 name: gp_assets_generator
 description: The flutter tool to generate assets‘s configs(yaml) and consts automatically for single project and multiple modules.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/toannmdev/gp_assets_generator.git
 
 environment:

@@ -1,4 +1,4 @@
-# assets_generator
+# gp_assets_generator
 
 The flutter tool to generate assets‘s configs(yaml) and consts automatically for single project and multiple modules at Gapo.
 
@@ -38,9 +38,9 @@ you need to add pub bin path into your system path.
 
 [pub global](https://dart.dev/tools/pub/cmd/pub-global)
 
-### Activate assets_generator
+### Activate gp_assets_generator
 
- `dart pub global activate assets_generator`
+ `dart pub global activate gp_assets_generator`
 
 ### Command
 
