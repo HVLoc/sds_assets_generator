@@ -8,6 +8,7 @@ import 'package:gp_assets_generator/src/format.dart';
 import 'package:gp_assets_generator/src/watcher.dart';
 import 'package:io/ansi.dart';
 import 'package:path/path.dart';
+import 'package:yaml/yaml.dart';
 
 import 'template.dart';
 import 'yaml.dart';
@@ -70,6 +71,14 @@ class Generator {
     final Map<String, String> miss = checkResolutionImageAssets(assets);
 
     assets.sort((String a, String b) => a.compareTo(b));
+
+    for (String e in assets) {
+      e = e.replaceAll('lib/', 'packages/gp_assets/');
+    }
+
+    for (String e in miss.keys) {
+      e = e.replaceAll('lib/', 'packages/gp_assets/');
+    }
 
     await generateConstsFile(assets, miss);
 
