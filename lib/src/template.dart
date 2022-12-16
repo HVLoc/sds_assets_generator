@@ -136,7 +136,7 @@ class Template {
         .replaceAll(' ', '')
         .replaceAll('(', '')
         .replaceAll(')', '')
-        .replaceAll('=', '-');
+        .replaceAll('=', '_equals_');
     return rule!.go(path);
   }
 }
