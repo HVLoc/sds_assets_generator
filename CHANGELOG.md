@@ -1,3 +1,17 @@
+## 1.1.5
+* Feat: ignore '.part' files
+## 1.1.4
+* Feat: ignore '.part' files
+## 1.1.3
+* Feat: ignore '.dart' files
+## 1.1.2
+* Feat: ignore 'gp_locale_keys.m.g.dart'
+## 1.1.1
+* Feat: add ignore paths
+## 1.1.1
+* Feat: add ignore paths
+## 1.0.9
+* Feat: add ignore paths
 ## 1.0.8
 * Final version: done removing special character, updated lastest file rule for Gapo
 ## 1.0.7

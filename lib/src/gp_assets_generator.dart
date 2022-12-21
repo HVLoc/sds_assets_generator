@@ -12,6 +12,13 @@ import 'package:path/path.dart';
 import 'template.dart';
 import 'yaml.dart';
 
+const List<String> ignorePaths = <String>[
+  '.DS_Store',
+  'assets.preview.dart',
+  'gp_localization_generator.csv',
+  'gp_locale_keys.m.g.dart',
+];
+
 class Generator {
   Generator({
     this.packageGraph,
@@ -85,6 +92,14 @@ class Generator {
   ) {
     dirList.add(directory);
 
+    bool isIgnoreName(String filePath) {
+      final String fileBaseName = basename(filePath);
+
+      return ignorePaths.contains(fileBaseName) ||
+          filePath.contains('.dart') ||
+          filePath.contains('.part');
+    }
+
     for (final FileSystemEntity item in directory.listSync()) {
       final FileStat fileStat = item.statSync();
       if (folderIgnore != null && folderIgnore!.hasMatch(item.path)) {
@@ -96,7 +111,8 @@ class Generator {
           dirList,
         );
       } else if (fileStat.type == FileSystemEntityType.file) {
-        if (basename(item.path) != '.DS_Store') {
+        // if (basename(item.path) != '.DS_Store') {
+        if (!isIgnoreName(item.path)) {
           assets.add(item.path
               .replaceAll('${packageGraph!.path}$separator', '')
               .replaceAll(separator, '/')
