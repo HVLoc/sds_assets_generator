@@ -1,1 +1,1 @@
-const String userAgent = 'Gapo Developer';
+const String userAgent = 'SoftDreams Developer';

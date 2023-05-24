@@ -1,4 +1,4 @@
-# gp_assets_generator
+# sds_assets_generator
 
 The flutter tool to generate assets‘s configs(yaml) and consts automatically for single project and multiple modules at Gapo.
 
@@ -8,12 +8,12 @@ Forked from "https://github.com/fluttercandies/assets_generator"
 
 ![](assets_generator.gif)
 
-Command for generate at Gapo: 
+Command for generate at SoftDreams: 
 ```dart
-gp_agen -f lib -t f -s -r uwu
+sds_agen -f lib -t f -s -r uwu
 ```
 
-- [assets_generator](#assets_generator)
+- [sds_assets_generator](#assets_generator)
   - [Usage](#usage)
     - [Environment](#environment)
     - [Activate assets_generator](#activate-assets_generator)
@@ -38,19 +38,19 @@ you need to add pub bin path into your system path.
 
 [pub global](https://dart.dev/tools/pub/cmd/pub-global)
 
-### Activate gp_assets_generator
+### Activate sds_assets_generator
 
- `dart pub global activate gp_assets_generator`
+ `dart pub global activate sds_assets_generator`
 
 ### Command
 
 #### Help
 
-`gp_agen -h`
+`sds_agen -h`
 
 #### Demo
 
-`gp_agen -t d -s -r lwu`
+`sds_agen -t d -s -r lwu`
 
 #### All Commands
 

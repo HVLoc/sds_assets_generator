@@ -2,7 +2,7 @@
 
 import 'dart:io';
 
-import 'package:gp_assets_generator/gp_assets_generator.dart';
+import 'package:sds_assets_generator/sds_assets_generator.dart';
 import 'package:io/ansi.dart';
 import 'package:path/path.dart';
 import 'package:source_span/source_span.dart';

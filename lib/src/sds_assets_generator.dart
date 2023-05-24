@@ -3,9 +3,9 @@
 import 'dart:io';
 
 import 'package:build_runner_core/build_runner_core.dart';
-import 'package:gp_assets_generator/gp_assets_generator.dart';
-import 'package:gp_assets_generator/src/format.dart';
-import 'package:gp_assets_generator/src/watcher.dart';
+import 'package:sds_assets_generator/sds_assets_generator.dart';
+import 'package:sds_assets_generator/src/format.dart';
+import 'package:sds_assets_generator/src/watcher.dart';
 import 'package:io/ansi.dart';
 import 'package:path/path.dart';
 
@@ -116,7 +116,7 @@ class Generator {
           assets.add(item.path
               .replaceAll('${packageGraph!.path}$separator', '')
               .replaceAll(separator, '/')
-              .replaceAll('lib/', 'packages/gp_assets/'));
+              .replaceAll('lib/', 'packages/sds_assets/'));
         }
       }
     }
@@ -191,7 +191,7 @@ class Generator {
       print(green.wrap(asset));
       final String r = asset.replaceAllMapped(regExp, (Match match) {
         return '';
-      }).replaceAll('lib/', 'packages/gp_assets/');
+      }).replaceAll('lib/', 'packages/sds_assets/');
       //macth
       if (r != asset) {
         if (!assets.contains(r)) {

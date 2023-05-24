@@ -3,12 +3,12 @@
 import 'dart:io';
 
 import 'package:build_runner_core/build_runner_core.dart';
-import 'package:gp_assets_generator/gp_assets_generator.dart';
-import 'package:gp_assets_generator/src/arg/package.dart';
+import 'package:sds_assets_generator/sds_assets_generator.dart';
+import 'package:sds_assets_generator/src/arg/package.dart';
 import 'package:io/ansi.dart';
 import 'package:path/path.dart';
 
-const String argumentsFile = 'gp_assets_generator_arguments';
+const String argumentsFile = 'sds_assets_generator_arguments';
 const String debugArguments = '-p example/ -t f --const-ignore .md';
 Future<void> main(List<String> arguments) async {
   //arguments = debugArguments.split(' ');
