@@ -115,8 +115,8 @@ class Generator {
         if (!isIgnoreName(item.path)) {
           assets.add(item.path
               .replaceAll('${packageGraph!.path}$separator', '')
-              .replaceAll(separator, '/')
-              .replaceAll('lib/', 'packages/sds_assets/'));
+              .replaceAll(separator, '/'));
+              // .replaceAll('lib/', 'packages/sds_assets/'));
         }
       }
     }
@@ -191,7 +191,7 @@ class Generator {
       print(green.wrap(asset));
       final String r = asset.replaceAllMapped(regExp, (Match match) {
         return '';
-      }).replaceAll('lib/', 'packages/sds_assets/');
+      });
       //macth
       if (r != asset) {
         if (!assets.contains(r)) {

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'assets.dart';
+
 void main() => runApp(MyApp());
+bool isFromModules = false;
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -20,13 +23,13 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePageModule(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key key, this.title}) : super(key: key);
+class MyHomePageModule extends StatefulWidget {
+  const MyHomePageModule({Key key, this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -40,10 +43,10 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MyHomePageModuleState createState() => _MyHomePageModuleState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageModuleState extends State<MyHomePageModule> {
   int _counter = 0;
 
   void _incrementCounter() {
@@ -96,6 +99,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
+            ),
+            Image.asset(
+              Assets.assets_images_image_png,
+              package: isFromModules ? Assets.package : null,
             ),
           ],
         ),

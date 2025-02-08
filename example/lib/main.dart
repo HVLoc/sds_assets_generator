@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'assets.dart';
+import 'package:module_a/assets.dart';
+import 'package:module_a/main.dart';
 
 void main() => runApp(const MyApp());
 
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePageModule(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -49,6 +49,11 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  @override
+  void initState() {
+    super.initState();
+    isFromModules = true; // 9 thằng tương ứng với 9 thằng trong module 
+  }
 
   void _incrementCounter() {
     setState(() {
@@ -101,7 +106,10 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
             ),
-            Image.asset(Assets.assets_images_flutter_candies_logo_png),
+            Image.asset(
+              Assets.assets_images_image_png,
+              package: Assets.package,
+            ),
           ],
         ),
       ),
