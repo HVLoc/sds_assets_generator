@@ -2,9 +2,9 @@
 
 import 'dart:io';
 
-import 'package:sds_assets_generator/sds_assets_generator.dart';
 import 'package:io/ansi.dart';
 import 'package:path/path.dart';
+import 'package:sds_assets_generator/sds_assets_generator.dart';
 import 'package:source_span/source_span.dart';
 import 'package:yaml/yaml.dart';
 
@@ -23,6 +23,11 @@ const String license = '''
 const String assetsStart = '# assets start';
 const String assetsEnd = '# assets end';
 const String space = ' ';
+const String sdsConfig = '''
+  easy_sds_config:
+    git:
+      url: http://10.100.140.19:7990/scm/sma/easy_sds_config.git
+''';
 
 class Yaml {
   Yaml(
@@ -63,8 +68,13 @@ class Yaml {
 
     final String indent = getIndent(yaml);
 
+    final String indentDependencies = getIndentDependencies(yaml);
+
     final StringBuffer pubspecSb = StringBuffer();
+
     if (assets.isNotEmpty) {
+      pubspecSb.write('$indentDependencies$sdsConfig\n');
+
       pubspecSb.write('$indent$assetsStart\n');
       pubspecSb.write(license.replaceAll('{0}', indent));
       for (final String asset in assets) {
@@ -153,6 +163,17 @@ class Yaml {
 String getIndent(YamlMap yamlMap) {
   if (yamlMap.containsKey('flutter')) {
     final YamlMap? flutter = yamlMap['flutter'] as YamlMap?;
+    if (flutter != null && flutter.nodes.keys.first is YamlNode) {
+      final SourceSpan sourceSpan = flutter.nodes.keys.first.span as SourceSpan;
+      return space * sourceSpan.start.column;
+    }
+  }
+  return space * 2;
+}
+
+String getIndentDependencies(YamlMap yamlMap) {
+  if (yamlMap.containsKey('dependencies')) {
+    final YamlMap? flutter = yamlMap['dependencies'] as YamlMap?;
     if (flutter != null && flutter.nodes.keys.first is YamlNode) {
       final SourceSpan sourceSpan = flutter.nodes.keys.first.span as SourceSpan;
       return space * sourceSpan.start.column;
