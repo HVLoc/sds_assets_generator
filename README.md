@@ -1,8 +1,8 @@
 # sds_assets_generator
 
-The flutter tool to generate assets‘s configs(yaml) and consts automatically for single project and multiple modules at Gapo.
+The flutter tool to generate assets‘s configs(yaml) and consts automatically for single project and multiple modules at SDS.
 
-Customized and apply for Gapo, not for everyone.
+Customized and apply for SDS, not for everyone.
 
 Forked from "https://github.com/fluttercandies/assets_generator"
 

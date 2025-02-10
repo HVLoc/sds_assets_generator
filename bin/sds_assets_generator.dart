@@ -3,10 +3,10 @@
 import 'dart:io';
 
 import 'package:build_runner_core/build_runner_core.dart';
-import 'package:sds_assets_generator/sds_assets_generator.dart';
-import 'package:sds_assets_generator/src/arg/package.dart';
 import 'package:io/ansi.dart';
 import 'package:path/path.dart';
+import 'package:sds_assets_generator/sds_assets_generator.dart';
+import 'package:sds_assets_generator/src/arg/package.dart';
 
 const String argumentsFile = 'sds_assets_generator_arguments';
 const String debugArguments = '-p example/ -t f --const-ignore .md';
@@ -48,7 +48,7 @@ Future<void> main(List<String> arguments) async {
 
   final bool isWatch = watch.value!;
 
-  print('generate assets start');
+  print('generate sds assets start');
 
   final PackageNode rootNode = packageGraph.root;
   for (final PackageNode packageNode in packageGraph.allPackages.values.where(
@@ -85,6 +85,6 @@ Future<void> main(List<String> arguments) async {
     file.writeAsStringSync(argumentsS.trim());
   }
   if (!isWatch) {
-    print('generate assets end');
+    print('generate sds assets end');
   }
 }

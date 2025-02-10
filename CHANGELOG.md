@@ -1,3 +1,5 @@
+## 1.1.7
+* Feat: update package name
 ## 1.1.5
 * Feat: ignore '.part' files
 ## 1.1.4
@@ -13,22 +15,22 @@
 ## 1.0.9
 * Feat: add ignore paths
 ## 1.0.8
-* Final version: done removing special character, updated lastest file rule for Gapo
+* Final version: done removing special character, updated lastest file rule for SDS
 ## 1.0.7
-* Customized for Gapo: remove special character from file name
+* Customized for SDS: remove special character from file name
 ## 1.0.6
-* Customized for Gapo: remove special character from file name
+* Customized for SDS: remove special character from file name
 ## 1.0.5
-* Customized for Gapo: remove special character from file name
+* Customized for SDS: remove special character from file name
 ## 1.0.4
-* Customized for Gapo: remove special character from file name
+* Customized for SDS: remove special character from file name
 ## 1.0.3
-* Customized for Gapo: remove special character from file name
+* Customized for SDS: remove special character from file name
 ## 1.0.2
-* Customized for Gapo: remove special character from file name
+* Customized for SDS: remove special character from file name
 ## 1.0.1
 
-* Customized for Gapo
+* Customized for SDS
 
 ## 1.0.0
 
