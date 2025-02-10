@@ -176,7 +176,7 @@ String getIndentDependencies(YamlMap yamlMap) {
     final YamlMap? flutter = yamlMap['dependencies'] as YamlMap?;
     if (flutter != null && flutter.nodes.keys.first is YamlNode) {
       final SourceSpan sourceSpan = flutter.nodes.keys.first.span as SourceSpan;
-      return space * sourceSpan.start.column;
+      return space;
     }
   }
   return space * 2;
