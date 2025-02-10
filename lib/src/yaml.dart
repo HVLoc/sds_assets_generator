@@ -150,8 +150,8 @@ class Yaml {
       yamlString = yamlString.replaceAll('assets:', '').trim();
     }
 
-    // //Thêm lib easy_sds_config vào dependencies
-    // yamlString = addLidDependencies(yamlString);
+    //Thêm lib easy_sds_config vào dependencies
+    yamlString = addLidDependencies(yamlString);
 
     yamlString = yamlString.trim();
 
