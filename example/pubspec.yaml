@@ -32,7 +32,7 @@ dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
-  
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -76,10 +76,6 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
-
-    easy_sds_config:
-    git:
-      url: http://10.100.140.19:7990/scm/sma/easy_sds_config.git
 
   # assets start
 

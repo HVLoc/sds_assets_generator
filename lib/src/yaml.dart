@@ -24,6 +24,7 @@ const String assetsStart = '# assets start';
 const String assetsEnd = '# assets end';
 const String space = ' ';
 const String sdsConfig = '''
+
   easy_sds_config:
     git:
       url: http://10.100.140.19:7990/scm/sma/easy_sds_config.git
@@ -68,13 +69,9 @@ class Yaml {
 
     final String indent = getIndent(yaml);
 
-    final String indentDependencies = getIndentDependencies(yaml);
-
     final StringBuffer pubspecSb = StringBuffer();
 
     if (assets.isNotEmpty) {
-      pubspecSb.write('$indentDependencies$sdsConfig\n');
-
       pubspecSb.write('$indent$assetsStart\n');
       pubspecSb.write(license.replaceAll('{0}', indent));
       for (final String asset in assets) {
@@ -98,6 +95,9 @@ class Yaml {
       yamlString =
           yamlString.replaceRange(start, end + assetsEnd.length, newAssets);
     } else {
+      //Thêm lib easy_sds_config vào dependencies
+      yamlString = addLidDependencies(yamlString);
+
       final String assetsNodeS =
           assets.isEmpty ? '' : '\n${indent}assets:\n\n$newAssets';
 
@@ -171,13 +171,10 @@ String getIndent(YamlMap yamlMap) {
   return space * 2;
 }
 
-String getIndentDependencies(YamlMap yamlMap) {
-  if (yamlMap.containsKey('dependencies')) {
-    final YamlMap? flutter = yamlMap['dependencies'] as YamlMap?;
-    if (flutter != null && flutter.nodes.keys.first is YamlNode) {
-      final SourceSpan sourceSpan = flutter.nodes.keys.first.span as SourceSpan;
-      return space;
-    }
+String addLidDependencies(String yamlString) {
+  final int start = yamlString.indexOf('dependencies');
+  if (start > -1) {
+    yamlString.replaceRange(start, null, sdsConfig);
   }
-  return space * 2;
+  return yamlString;
 }
