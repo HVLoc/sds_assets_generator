@@ -3,11 +3,11 @@
 import 'dart:io';
 
 import 'package:build_runner_core/build_runner_core.dart';
+import 'package:io/ansi.dart';
+import 'package:path/path.dart';
 import 'package:sds_assets_generator/sds_assets_generator.dart';
 import 'package:sds_assets_generator/src/format.dart';
 import 'package:sds_assets_generator/src/watcher.dart';
-import 'package:io/ansi.dart';
-import 'package:path/path.dart';
 
 import 'template.dart';
 import 'yaml.dart';
@@ -116,7 +116,7 @@ class Generator {
           assets.add(item.path
               .replaceAll('${packageGraph!.path}$separator', '')
               .replaceAll(separator, '/'));
-              // .replaceAll('lib/', 'packages/sds_assets/'));
+          // .replaceAll('lib/', 'packages/sds_assets/'));
         }
       }
     }
@@ -204,5 +204,22 @@ class Generator {
       }
     }
     return miss;
+  }
+
+  @override
+  String toString() {
+    return 'Generator('
+        'packageGraph: $packageGraph, '
+        'folder: $folder, '
+        'formatType: $formatType, '
+        'watch: $watch, '
+        'output: $output, '
+        'rule: $rule, '
+        'class1: $class1, '
+        'constIgnore: $constIgnore, '
+        'constArray: $constArray, '
+        'folderIgnore: $folderIgnore, '
+        'package: $package'
+        ')';
   }
 }

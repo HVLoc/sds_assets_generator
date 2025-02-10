@@ -48,7 +48,7 @@ Future<void> main(List<String> arguments) async {
 
   final bool isWatch = watch.value!;
 
-  print('generate sds assets start');
+  print('generate assets start');
 
   final PackageNode rootNode = packageGraph.root;
   for (final PackageNode packageNode in packageGraph.allPackages.values.where(
@@ -56,7 +56,7 @@ Future<void> main(List<String> arguments) async {
         packageGraph.dependencyType == DependencyType.path &&
         packageGraph.path.startsWith(rootNode.path),
   )) {
-    Generator(
+    final Generator generator = Generator(
       packageGraph: packageNode,
       folder: folder.value,
       formatType: type.type(type.value),
@@ -70,7 +70,10 @@ Future<void> main(List<String> arguments) async {
       folderIgnore:
           folderIgnore.value != null ? RegExp(folderIgnore.value!) : null,
       package: package.value ?? false,
-    ).go();
+    );
+
+    print(generator.toString());
+    generator.go();
   }
 
   if (save.value! && !runFromLocal) {
@@ -85,6 +88,6 @@ Future<void> main(List<String> arguments) async {
     file.writeAsStringSync(argumentsS.trim());
   }
   if (!isWatch) {
-    print('generate sds assets end');
+    print('generate assets end');
   }
 }
