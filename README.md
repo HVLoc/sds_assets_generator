@@ -40,7 +40,7 @@ you need to add pub bin path into your system path.
 
 ### Activate sds_assets_generator
 
- `dart pub global activate sds_assets_generator`
+ `dart pub global activate -s git https://github.com/HVLoc/sds_assets_generator.git`
 
 ### Command
 
