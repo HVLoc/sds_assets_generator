@@ -2,6 +2,7 @@ name: sds_assets_generator
 description: The flutter tool to generate assets‘s configs(yaml) and consts automatically for single project and multiple modules.
 version: 1.1.7
 homepage: https://github.com/HVLoc/sds_assets_generator.git
+publish_to: none
 
 environment:
   sdk: ">=2.15.0 <3.0.0"
@@ -16,6 +17,9 @@ dependencies:
   source_span: ^1.8.1
   yaml: ^3.1.0
   mime: ^1.0.2
+  easy_sds_config:
+    git:
+      url: http://lochv@10.100.140.19:7990/scm/sma/easy_sds_config.git
 
 dev_dependencies:
   pedantic: ^1.11.1

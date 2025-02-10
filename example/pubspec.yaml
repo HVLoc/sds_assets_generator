@@ -32,6 +32,8 @@ dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
+  sds_assets_generator:
+    path: ../
 
 dev_dependencies:
   flutter_test:
