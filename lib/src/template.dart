@@ -126,7 +126,7 @@ class Template {
   }
 
   String formatFiled(String path) {
-    return '''static String get ${_formatFiledName(path)} => '\${isFromModules ? "package/${packageGraph!.name}$separator" : ""}$path';\n''';
+    return '''static String get ${_formatFiledName(path)} => '\${isFromModules ? "packages/${packageGraph!.name}$separator" : ""}$path';\n''';
   }
 
   String _formatFiledName(String path) {

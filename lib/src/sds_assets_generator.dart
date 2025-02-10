@@ -113,15 +113,9 @@ class Generator {
       } else if (fileStat.type == FileSystemEntityType.file) {
         // if (basename(item.path) != '.DS_Store') {
         if (!isIgnoreName(item.path)) {
-          String path = item.path
+          assets.add(item.path
               .replaceAll('${packageGraph!.path}$separator', '')
-              .replaceAll(separator, '/');
-
-          if (package) {
-            path = path.replaceAll('lib/', 'packages/${packageGraph!.name}/');
-          }
-
-          assets.add(path);
+              .replaceAll(separator, '/'));
         }
       }
     }
