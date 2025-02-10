@@ -1,9 +1,9 @@
 import 'dart:io';
 
 import 'package:build_runner_core/build_runner_core.dart';
-import 'package:sds_assets_generator/sds_assets_generator.dart';
 import 'package:mime/mime.dart';
 import 'package:path/path.dart';
+import 'package:sds_assets_generator/sds_assets_generator.dart';
 
 import 'const.dart';
 
@@ -72,7 +72,11 @@ class Template {
     if (!packageGraph!.isRoot || package) {
       sb.write(
           '''\nstatic const String package = '${packageGraph!.name}';\n''');
+      sb.write('''\nstatic bool isFromModules = false;\n''');
     }
+
+    sb.write('''\nstatic bool isFromModules = false;\n''');
+
     final StringBuffer previewImageSb = StringBuffer();
 
     for (final String asset in assets) {
@@ -123,7 +127,7 @@ class Template {
   }
 
   String formatFiled(String path) {
-    return '''static const String ${_formatFiledName(path)} = '$path';\n''';
+    return '''static String get ${_formatFiledName(path)} => '\${isFromModules ? "package/${packageGraph!.name}" : ""}$path';\n''';
   }
 
   String _formatFiledName(String path) {

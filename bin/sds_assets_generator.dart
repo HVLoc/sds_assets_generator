@@ -56,7 +56,7 @@ Future<void> main(List<String> arguments) async {
         packageGraph.dependencyType == DependencyType.path &&
         packageGraph.path.startsWith(rootNode.path),
   )) {
-    final Generator generator = Generator(
+    Generator(
       packageGraph: packageNode,
       folder: folder.value,
       formatType: type.type(type.value),
@@ -70,10 +70,7 @@ Future<void> main(List<String> arguments) async {
       folderIgnore:
           folderIgnore.value != null ? RegExp(folderIgnore.value!) : null,
       package: package.value ?? false,
-    );
-
-    print(generator.toString());
-    generator.go();
+    ).go();
   }
 
   if (save.value! && !runFromLocal) {

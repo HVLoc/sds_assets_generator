@@ -113,10 +113,15 @@ class Generator {
       } else if (fileStat.type == FileSystemEntityType.file) {
         // if (basename(item.path) != '.DS_Store') {
         if (!isIgnoreName(item.path)) {
-          assets.add(item.path
+          String path = item.path
               .replaceAll('${packageGraph!.path}$separator', '')
-              .replaceAll(separator, '/'));
-          // .replaceAll('lib/', 'packages/sds_assets/'));
+              .replaceAll(separator, '/');
+
+          if (package) {
+            path = path.replaceAll('lib/', 'packages/${packageGraph!.name}/');
+          }
+
+          assets.add(path);
         }
       }
     }
@@ -204,22 +209,5 @@ class Generator {
       }
     }
     return miss;
-  }
-
-  @override
-  String toString() {
-    return 'Generator('
-        'packageGraph: $packageGraph, '
-        'folder: $folder, '
-        'formatType: $formatType, '
-        'watch: $watch, '
-        'output: $output, '
-        'rule: $rule, '
-        'class1: $class1, '
-        'constIgnore: $constIgnore, '
-        'constArray: $constArray, '
-        'folderIgnore: $folderIgnore, '
-        'package: $package'
-        ')';
   }
 }
