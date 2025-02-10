@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'assets.dart';
 
 void main() => runApp(MyApp());
-bool isFromModules = false;
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -62,6 +61,7 @@ class _MyHomePageModuleState extends State<MyHomePageModule> {
 
   @override
   Widget build(BuildContext context) {
+    print(Assets.assets_images_image_png);
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -102,7 +102,6 @@ class _MyHomePageModuleState extends State<MyHomePageModule> {
             ),
             Image.asset(
               Assets.assets_images_image_png,
-              package: isFromModules ? Assets.package : null,
             ),
           ],
         ),
