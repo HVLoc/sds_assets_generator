@@ -50,6 +50,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.3"
+  easy_sds_config:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "55a2b85cd0c94035300e1609dc55f1092e4f23ed"
+      url: "http://10.100.140.19:7990/scm/sma/easy_sds_config.git"
+    source: git
+    version: "1.0.0"
   fake_async:
     dependency: transitive
     description:
@@ -178,4 +187,4 @@ packages:
     source: hosted
     version: "2.1.1"
 sdks:
-  dart: ">=2.14.0 <3.0.0"
+  dart: ">=2.15.0 <3.0.0"

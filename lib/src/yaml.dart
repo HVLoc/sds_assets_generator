@@ -172,8 +172,11 @@ String getIndent(YamlMap yamlMap) {
 }
 
 String addLidDependencies(String yamlString) {
+  if (yamlString.contains('easy_sds_config:')) {
+    return yamlString;
+  }
   final String updated = yamlString.replaceFirstMapped(
       RegExp(r'(^dependencies:\s*$)', multiLine: true),
-      (Match match) => '${match.group(0)}\n $sdsConfig\n');
+      (Match match) => '${match.group(0)}$sdsConfig');
   return updated;
 }
