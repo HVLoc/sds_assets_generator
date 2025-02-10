@@ -9,6 +9,12 @@ environment:
 
 dependencies:
  
+ 
+  easy_sds_config:
+    git:
+      url: http://10.100.140.19:7990/scm/sma/easy_sds_config.git
+
+
   easy_sds_config:
     git:
       url: http://10.100.140.19:7990/scm/sma/easy_sds_config.git
@@ -26,10 +32,8 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 
-
 flutter:
   assets:
-
   # assets start
 
   # GENERATED CODE - DO NOT MODIFY MANUALLY
