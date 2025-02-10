@@ -91,9 +91,6 @@ class Yaml {
     }
     final int end = yamlString.indexOf(assetsEnd);
 
-    //Thêm lib easy_sds_config vào dependencies
-    yamlString = addLidDependencies(yamlString);
-
     if (start > -1 && end > -1) {
       yamlString =
           yamlString.replaceRange(start, end + assetsEnd.length, newAssets);
@@ -153,6 +150,9 @@ class Yaml {
       yamlString = yamlString.replaceAll('assets:', '').trim();
     }
 
+    //Thêm lib easy_sds_config vào dependencies
+    yamlString = addLidDependencies(yamlString);
+
     yamlString = yamlString.trim();
 
     yamlFile.writeAsStringSync(yamlString);
@@ -173,8 +173,9 @@ String getIndent(YamlMap yamlMap) {
 
 String addLidDependencies(String yamlString) {
   final int start = yamlString.indexOf('dependencies:');
-  if (start > -1) {
-    yamlString = yamlString.replaceRange(start, null, sdsConfig);
+  final int end = start + 'dependencies:\n '.length;
+  if (end > -1) {
+    yamlString = yamlString.replaceRange(end, end, sdsConfig);
   }
   return yamlString;
 }
