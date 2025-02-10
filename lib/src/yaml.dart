@@ -91,13 +91,13 @@ class Yaml {
     }
     final int end = yamlString.indexOf(assetsEnd);
 
+    //Thêm lib easy_sds_config vào dependencies
+    yamlString = addLidDependencies(yamlString);
+
     if (start > -1 && end > -1) {
       yamlString =
           yamlString.replaceRange(start, end + assetsEnd.length, newAssets);
     } else {
-      //Thêm lib easy_sds_config vào dependencies
-      yamlString = addLidDependencies(yamlString);
-
       final String assetsNodeS =
           assets.isEmpty ? '' : '\n${indent}assets:\n\n$newAssets';
 
@@ -172,9 +172,9 @@ String getIndent(YamlMap yamlMap) {
 }
 
 String addLidDependencies(String yamlString) {
-  final int start = yamlString.indexOf('dependencies');
+  final int start = yamlString.indexOf('dependencies:');
   if (start > -1) {
-    yamlString.replaceRange(start, null, sdsConfig);
+    yamlString = yamlString.replaceRange(start, null, sdsConfig);
   }
   return yamlString;
 }
