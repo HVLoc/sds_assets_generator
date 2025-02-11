@@ -8,17 +8,9 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
- 
- 
   easy_sds_config:
     git:
       url: http://10.100.140.19:7990/scm/sma/easy_sds_config.git
-
-
-  easy_sds_config:
-    git:
-      url: http://10.100.140.19:7990/scm/sma/easy_sds_config.git
-
 
   flutter:
     sdk: flutter
