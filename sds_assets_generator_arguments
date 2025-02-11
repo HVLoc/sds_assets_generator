@@ -1,1 +1,1 @@
--s -t f --const-array --rule lwu --package --no-watch
+-s -t d --const-array --rule lwu --no-watch

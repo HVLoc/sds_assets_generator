@@ -11,22 +11,18 @@ class Assets {
 
   static bool isFromModules = ConfigAssets.isFromModules;
 
-  static String get assets_abc_txt =>
-      '${isFromModules ? "packages/module_a/" : ""}assets/abc.txt';
+  static const String assets_abc_txt = 'assets/abc.txt';
 
   /// {@macro assets_generator.assets_images_flutter_candies_logo_png.preview}
-  static String get assets_images_flutter_candies_logo_png =>
-      '${isFromModules ? "packages/module_a/" : ""}assets/images/flutter_candies_logo.png';
+  static const String assets_images_flutter_candies_logo_png =
+      'assets/images/flutter_candies_logo.png';
 
   /// {@macro assets_generator.assets_images_image_png.preview}
-  static String get assets_images_image_png =>
-      '${isFromModules ? "packages/module_a/" : ""}assets/images/image.png';
+  static const String assets_images_image_png = 'assets/images/image.png';
 
-  static String get assets_images_test_txt =>
-      '${isFromModules ? "packages/module_a/" : ""}assets/images/test.txt';
+  static const String assets_images_test_txt = 'assets/images/test.txt';
 
-  static String get assets_xxx_md =>
-      '${isFromModules ? "packages/module_a/" : ""}assets/xxx.md';
+  static const String assets_xxx_md = 'assets/xxx.md';
 }
 
 final List<String> assetsArray = <String>[

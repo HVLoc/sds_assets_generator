@@ -73,9 +73,9 @@ class Template {
     if (!packageGraph!.isRoot || package) {
       sb.write(
           '''\nstatic const String package = '${packageGraph!.name}';\n''');
+      sb.write(
+          '''\nstatic bool isFromModules = ConfigAssets.isFromModules;\n''');
     }
-
-    sb.write('''\nstatic bool isFromModules = ConfigAssets.isFromModules;\n''');
 
     final StringBuffer previewImageSb = StringBuffer();
 
@@ -127,7 +127,10 @@ class Template {
   }
 
   String formatFiled(String path) {
-    return '''static String get ${_formatFiledName(path)} => '\${isFromModules ? "packages/${packageGraph!.name}$separator" : ""}$path';\n''';
+    if (package) {
+      return '''static String get ${_formatFiledName(path)} => '\${isFromModules ? "packages/${packageGraph!.name}$separator" : ""}$path';\n''';
+    }
+    return '''static const String ${_formatFiledName(path)} = '$path';\n''';
   }
 
   String _formatFiledName(String path) {
