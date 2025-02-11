@@ -133,7 +133,7 @@ class Template {
 
   String formatFiled(String path) {
     if (package) {
-      return '''static String get ${_formatFiledName(path)} => '\${ConfigAssets.isFromModules ? "packages/\$package" : ""}$path';\n''';
+      return '''static String get ${_formatFiledName(path)} => '\${ConfigAssets.isFromModules ? "packages/\$package/" : ""}$path';\n''';
     }
     return '''static const String ${_formatFiledName(path)} = '$path';\n''';
   }
